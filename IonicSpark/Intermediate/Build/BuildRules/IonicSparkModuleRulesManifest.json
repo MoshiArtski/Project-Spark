@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"C:\\UnrealEngine\\GitRepFNF\\Project-Spark\\IonicSpark\\Source\\IonicSpark\\IonicSpark.Build.cs",
+		"C:\\UnrealEngine\\GitRepFNF\\Project-Spark\\IonicSpark\\Source\\IonicSpark.Target.cs",
+		"C:\\UnrealEngine\\GitRepFNF\\Project-Spark\\IonicSpark\\Source\\IonicSparkEditor.Target.cs"
+	],
+	"EngineVersion": "5.1.1"
+}

@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "IonicSpark",
+			"Path": "C:\\UnrealEngine\\GitRepFNF\\Project-Spark\\IonicSpark\\Source\\IonicSpark.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "IonicSparkEditor",
+			"Path": "C:\\UnrealEngine\\GitRepFNF\\Project-Spark\\IonicSpark\\Source\\IonicSparkEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
