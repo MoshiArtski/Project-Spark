@@ -1,0 +1,13 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\intermediate\\build\\win64\\unrealeditor\\inc\\ionicspark\\uht\\ionicspark.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\intermediate\\build\\win64\\ionicsparkeditor\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\intermediate\\build\\win64\\unrealeditor\\development\\ionicspark\\definitions.ionicspark.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

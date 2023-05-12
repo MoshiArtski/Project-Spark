@@ -11,6 +11,7 @@
     <None Include="..\..\Source\IonicSparkEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -38,11 +39,38 @@
     <ClInclude Include="..\..\Source\IonicSpark\IonicSpark.h">
       <Filter>Source\IonicSpark</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\IonicSpark\IonicSparkGameInstance.cpp">
+      <Filter>Source\IonicSpark</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\IonicSparkGameInstance.h">
+      <Filter>Source\IonicSpark</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\IonicSpark\IonicSparkGameModeBase.cpp">
       <Filter>Source\IonicSpark</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\IonicSpark\IonicSparkGameModeBase.h">
       <Filter>Source\IonicSpark</Filter>
+    </ClInclude>
+    <Filter Include="Source\IonicSpark\UI">
+      <UniqueIdentifier>{BF2B8E42-F50C-36A1-AFA7-6686DAA22936}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IonicSpark\UI\MainMenu.cpp">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\UI\MainMenu.h">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IonicSpark\UI\OptionsMenu.cpp">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\UI\OptionsMenu.h">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\IonicSpark\UI\SettingsMenu.cpp">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\UI\SettingsMenu.h">
+      <Filter>Source\IonicSpark\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
