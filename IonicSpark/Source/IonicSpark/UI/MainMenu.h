@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "Components/Button.h"
+
 #include "Components/WidgetSwitcher.h"
 
 #include "CoreMinimal.h"
@@ -30,31 +30,39 @@ protected:
 private:
 
 	UPROPERTY()
-		class UIonicSparkGameInstance* GameInstance;
+	class UIonicSparkGameInstance* GameInstance;
 
 
 	UPROPERTY(meta = (BindWidget))
-		class UButton* PlayButton;
+	class UButton* PlayButton;
 
 	UPROPERTY(meta = (BindWidget))
-		class UButton* QuitButton;
+	class UButton* QuitButton;
 
 	UPROPERTY(meta = (BindWidget))
-		class UButton* SettingsButton;
+	class UButton* SettingsButton;
 
 	UPROPERTY(meta = (BindWidget))
-		class UWidgetSwitcher* MenuSwitcher;
+	class UWidgetSwitcher* MenuSwitcher;
 
 	UPROPERTY(meta = (BindWidget))
-		class UWidget* MainMenu;
+	class UWidget* MainMenu;
+
+
 
 
 	//Lobby Menu
 	UPROPERTY(meta = (BindWidget))
-		class UWidget* LobbyMenu;
+	class UWidget* LobbyMenu;
 
 	UPROPERTY(meta = (BindWidget))
-		class UButton* BackButton;
+	class UButton* BackButton;
+
+	UPROPERTY(meta = (BindWidget))
+	class UButton* HostButton;
+
+	UFUNCTION()
+	void HostButtonPressed();
 	//
 
 

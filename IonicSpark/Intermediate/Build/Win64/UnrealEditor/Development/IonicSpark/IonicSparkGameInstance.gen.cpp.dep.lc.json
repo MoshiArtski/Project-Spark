@@ -7,6 +7,13 @@
         "Includes": [
             "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\intermediate\\build\\win64\\unrealeditor\\development\\ionicspark\\definitions.ionicspark.h",
             "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\source\\ionicspark\\ionicsparkgameinstance.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystem.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystemmodule.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystemtypes.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinebase\\source\\public\\online\\onlinebase.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystemnames.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinesubsystempackage.h",
+            "d:\\ue_5.1\\engine\\plugins\\online\\onlinesubsystem\\source\\public\\onlinedelegatemacros.h",
             "c:\\unrealengine\\gitrepfnf\\project-spark\\ionicspark\\intermediate\\build\\win64\\unrealeditor\\inc\\ionicspark\\uht\\ionicsparkgameinstance.generated.h"
         ],
         "ImportedModules": [],

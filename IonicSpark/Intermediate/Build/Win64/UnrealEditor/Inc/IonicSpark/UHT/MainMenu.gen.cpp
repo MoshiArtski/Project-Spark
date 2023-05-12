@@ -46,11 +46,19 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 		P_THIS->PlayButtonPressed();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UMainMenu::execHostButtonPressed)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->HostButtonPressed();
+		P_NATIVE_END;
+	}
 	void UMainMenu::StaticRegisterNativesUMainMenu()
 	{
 		UClass* Class = UMainMenu::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "BackButtonPressed", &UMainMenu::execBackButtonPressed },
+			{ "HostButtonPressed", &UMainMenu::execHostButtonPressed },
 			{ "PlayButtonPressed", &UMainMenu::execPlayButtonPressed },
 			{ "QuitButtonPressed", &UMainMenu::execQuitButtonPressed },
 			{ "SettingsButtonPressed", &UMainMenu::execSettingsButtonPressed },
@@ -76,6 +84,28 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UMainMenu_BackButtonPressed_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "UI/MainMenu.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UMainMenu, nullptr, "HostButtonPressed", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UMainMenu_HostButtonPressed()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UMainMenu_HostButtonPressed_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -190,6 +220,10 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_BackButton_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_BackButton;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_HostButton_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_HostButton;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -200,6 +234,7 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UMainMenu_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UMainMenu_BackButtonPressed, "BackButtonPressed" }, // 803928304
+		{ &Z_Construct_UFunction_UMainMenu_HostButtonPressed, "HostButtonPressed" }, // 2878122634
 		{ &Z_Construct_UFunction_UMainMenu_PlayButtonPressed, "PlayButtonPressed" }, // 3630179778
 		{ &Z_Construct_UFunction_UMainMenu_QuitButtonPressed, "QuitButtonPressed" }, // 2681059636
 		{ &Z_Construct_UFunction_UMainMenu_SettingsButtonPressed, "SettingsButtonPressed" }, // 4113911572
@@ -276,6 +311,14 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMainMenu_Statics::NewProp_BackButton = { "BackButton", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UMainMenu, BackButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UMainMenu_Statics::NewProp_BackButton_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMainMenu_Statics::NewProp_BackButton_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UMainMenu_Statics::NewProp_HostButton_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UI/MainMenu.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UMainMenu_Statics::NewProp_HostButton = { "HostButton", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UMainMenu, HostButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UMainMenu_Statics::NewProp_HostButton_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UMainMenu_Statics::NewProp_HostButton_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UMainMenu_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_GameInstance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_PlayButton,
@@ -285,6 +328,7 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_MainMenu,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_LobbyMenu,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_BackButton,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UMainMenu_Statics::NewProp_HostButton,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UMainMenu_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UMainMenu>::IsAbstract,
@@ -323,9 +367,9 @@ void EmptyLinkFunctionForGeneratedCodeMainMenu() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UMainMenu, UMainMenu::StaticClass, TEXT("UMainMenu"), &Z_Registration_Info_UClass_UMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainMenu), 694525921U) },
+		{ Z_Construct_UClass_UMainMenu, UMainMenu::StaticClass, TEXT("UMainMenu"), &Z_Registration_Info_UClass_UMainMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UMainMenu), 1524137172U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_3952465860(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_763646513(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

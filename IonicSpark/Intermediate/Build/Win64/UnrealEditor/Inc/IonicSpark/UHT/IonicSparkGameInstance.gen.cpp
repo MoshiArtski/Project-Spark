@@ -23,6 +23,31 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		P_THIS->LockMouseCursor();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execOnDestroySessionComplete)
+	{
+		P_GET_PROPERTY(FNameProperty,Z_Param_DestroyedSessionName);
+		P_GET_UBOOL(Z_Param_Success);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnDestroySessionComplete(Z_Param_DestroyedSessionName,Z_Param_Success);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execOnCreateSessionComplete)
+	{
+		P_GET_PROPERTY(FNameProperty,Z_Param_CreatedSessionName);
+		P_GET_UBOOL(Z_Param_Success);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnCreateSessionComplete(Z_Param_CreatedSessionName,Z_Param_Success);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execCreateSession)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CreateSession();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UIonicSparkGameInstance::execUpdateMouseSens)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_NewMouseSens);
@@ -45,16 +70,73 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		P_THIS->LoadMainMenu();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execHost)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Host();
+		P_NATIVE_END;
+	}
 	void UIonicSparkGameInstance::StaticRegisterNativesUIonicSparkGameInstance()
 	{
 		UClass* Class = UIonicSparkGameInstance::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "CreateSession", &UIonicSparkGameInstance::execCreateSession },
+			{ "Host", &UIonicSparkGameInstance::execHost },
 			{ "LoadMainMenu", &UIonicSparkGameInstance::execLoadMainMenu },
 			{ "LockMouseCursor", &UIonicSparkGameInstance::execLockMouseCursor },
+			{ "OnCreateSessionComplete", &UIonicSparkGameInstance::execOnCreateSessionComplete },
+			{ "OnDestroySessionComplete", &UIonicSparkGameInstance::execOnDestroySessionComplete },
 			{ "ToggleSettingsMenu", &UIonicSparkGameInstance::execToggleSettingsMenu },
 			{ "UpdateMouseSens", &UIonicSparkGameInstance::execUpdateMouseSens },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "CreateSession", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//Networking\n" },
+		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
+		{ "ToolTip", "Networking" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "Host", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_Host()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_Host_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu_Statics
 	{
@@ -65,6 +147,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//\n" },
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
 	};
 #endif
@@ -98,6 +181,88 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics
+	{
+		struct IonicSparkGameInstance_eventOnCreateSessionComplete_Parms
+		{
+			FName CreatedSessionName;
+			bool Success;
+		};
+		static const UECodeGen_Private::FNamePropertyParams NewProp_CreatedSessionName;
+		static void NewProp_Success_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_CreatedSessionName = { "CreatedSessionName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(IonicSparkGameInstance_eventOnCreateSessionComplete_Parms, CreatedSessionName), METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_Success_SetBit(void* Obj)
+	{
+		((IonicSparkGameInstance_eventOnCreateSessionComplete_Parms*)Obj)->Success = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(IonicSparkGameInstance_eventOnCreateSessionComplete_Parms), &Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_CreatedSessionName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::NewProp_Success,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "OnCreateSessionComplete", nullptr, nullptr, sizeof(Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::IonicSparkGameInstance_eventOnCreateSessionComplete_Parms), Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics
+	{
+		struct IonicSparkGameInstance_eventOnDestroySessionComplete_Parms
+		{
+			FName DestroyedSessionName;
+			bool Success;
+		};
+		static const UECodeGen_Private::FNamePropertyParams NewProp_DestroyedSessionName;
+		static void NewProp_Success_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_Success;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UECodeGen_Private::FNamePropertyParams Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_DestroyedSessionName = { "DestroyedSessionName", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(IonicSparkGameInstance_eventOnDestroySessionComplete_Parms, DestroyedSessionName), METADATA_PARAMS(nullptr, 0) };
+	void Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_Success_SetBit(void* Obj)
+	{
+		((IonicSparkGameInstance_eventOnDestroySessionComplete_Parms*)Obj)->Success = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_Success = { "Success", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(IonicSparkGameInstance_eventOnDestroySessionComplete_Parms), &Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_Success_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_DestroyedSessionName,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::NewProp_Success,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "OnDestroySessionComplete", nullptr, nullptr, sizeof(Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::IonicSparkGameInstance_eventOnDestroySessionComplete_Parms), Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -195,8 +360,12 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_IonicSpark,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UIonicSparkGameInstance_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu, "LoadMainMenu" }, // 2391286032
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_CreateSession, "CreateSession" }, // 3893976457
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_Host, "Host" }, // 3012066615
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu, "LoadMainMenu" }, // 547625637
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor, "LockMouseCursor" }, // 541153005
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_OnCreateSessionComplete, "OnCreateSessionComplete" }, // 1959275110
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_OnDestroySessionComplete, "OnDestroySessionComplete" }, // 4031127458
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu, "ToggleSettingsMenu" }, // 2481471958
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_UpdateMouseSens, "UpdateMouseSens" }, // 2010125840
 	};
@@ -282,9 +451,9 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 1338926590U) },
+		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 2590131223U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_1706449409(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_3632764424(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

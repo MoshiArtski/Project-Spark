@@ -271,6 +271,12 @@ C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Source\IonicSpark\IonicSpark.
 /I Developer\AnimationDataController\Public
 /I C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Inc\IonicSpark\UHT
 /I C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Source
+/I ..\Plugins\Online\OnlineSubsystem\Intermediate\Build\Win64\UnrealEditor\Inc\OnlineSubsystem\UHT
+/I ..\Plugins\Online\OnlineSubsystem
+/I ..\Plugins\Online\OnlineSubsystem\Source
+/I ..\Plugins\Online\OnlineSubsystem\Source\Public
+/I ..\Plugins\Online\OnlineBase
+/I ..\Plugins\Online\OnlineBase\Source\Public
 /I ThirdParty\mimalloc\include
 /I ThirdParty\LibTiff\Source\Win64
 /I ThirdParty\LibTiff\Source

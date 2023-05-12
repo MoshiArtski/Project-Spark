@@ -20,7 +20,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execBackButtonPressed); \
 	DECLARE_FUNCTION(execQuitButtonPressed); \
 	DECLARE_FUNCTION(execSettingsButtonPressed); \
-	DECLARE_FUNCTION(execPlayButtonPressed);
+	DECLARE_FUNCTION(execPlayButtonPressed); \
+	DECLARE_FUNCTION(execHostButtonPressed);
 
 
 #define FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
@@ -28,7 +29,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execBackButtonPressed); \
 	DECLARE_FUNCTION(execQuitButtonPressed); \
 	DECLARE_FUNCTION(execSettingsButtonPressed); \
-	DECLARE_FUNCTION(execPlayButtonPressed);
+	DECLARE_FUNCTION(execPlayButtonPressed); \
+	DECLARE_FUNCTION(execHostButtonPressed);
 
 
 #define FID_IonicSpark_Source_IonicSpark_UI_MainMenu_h_18_ACCESSORS

@@ -5,6 +5,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
+#include "OnlineSubsystem.h"
 #include "IonicSparkGameInstance.generated.h"
 
 /**
@@ -19,6 +20,15 @@ class IONICSPARK_API UIonicSparkGameInstance : public UGameInstance
 
 public:
 
+
+
+	//Networking
+
+	UFUNCTION()
+	void Host();
+
+	//
+
 	UFUNCTION(BlueprintCallable)
 		void LoadMainMenu(); //Gets called by the level blueprint 
 
@@ -29,11 +39,33 @@ public:
 	UFUNCTION()
 		void UpdateMouseSens(float NewMouseSens);
 
+
+
 protected:
 
 	virtual void Init() override;
 
 private:
+
+	//Networking
+
+	IOnlineSessionPtr SessionInterface;
+
+
+	
+
+	UFUNCTION()
+	void CreateSession();
+
+	UFUNCTION()
+	void OnCreateSessionComplete(FName CreatedSessionName, bool Success);
+
+	UFUNCTION()
+	void OnDestroySessionComplete(FName DestroyedSessionName, bool Success);
+
+
+	//
+
 
 	APlayerController* PlayerController;
 

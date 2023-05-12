@@ -29,16 +29,26 @@ bool UMainMenu::Initialize()
 	if (BackButton == nullptr) return false;
 	BackButton->OnClicked.AddDynamic(this, &UMainMenu::BackButtonPressed);
 
+	if (HostButton == nullptr) return false;
+	HostButton->OnClicked.AddDynamic(this, &UMainMenu::HostButtonPressed);
+
 	GameInstance = Cast<UIonicSparkGameInstance>(GetGameInstance());
 
 	return true;
 }
+
+
 
 void UMainMenu::PlayButtonPressed()
 {
 	MenuSwitcher->SetActiveWidget(LobbyMenu);
 }
 
+void UMainMenu::HostButtonPressed()
+{
+	if (GameInstance == nullptr) { return; }
+	GameInstance->Host();
+}
 
 void UMainMenu::SettingsButtonPressed()
 {

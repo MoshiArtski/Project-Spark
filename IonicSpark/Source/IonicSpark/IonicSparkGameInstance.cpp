@@ -5,11 +5,14 @@
 
 #include "IonicSparkGameInstance.h"
 #include "Blueprint/UserWidget.h"
+#include "Interfaces/OnlineSessionInterface.h"
+#include "OnlineSessionSettings.h"
+
 #include "UI/MainMenu.h"
 #include "UI/SettingsMenu.h"
 
 
-
+const static FName SessionName = TEXT("Ionic Session");
 
 UIonicSparkGameInstance::UIonicSparkGameInstance(const FObjectInitializer& ObjectInitializer)
 {
@@ -28,6 +31,21 @@ UIonicSparkGameInstance::UIonicSparkGameInstance(const FObjectInitializer& Objec
 void UIonicSparkGameInstance::Init()
 {
 	Super::Init();
+
+	IOnlineSubsystem* Subsystem = IOnlineSubsystem::Get();
+
+	if (Subsystem != nullptr) {
+
+		SessionInterface = Subsystem->GetSessionInterface();
+
+		if (SessionInterface.IsValid())
+		{
+
+			SessionInterface->OnCreateSessionCompleteDelegates.AddUObject(this, &UIonicSparkGameInstance::OnCreateSessionComplete);
+			SessionInterface->OnDestroySessionCompleteDelegates.AddUObject(this, &UIonicSparkGameInstance::OnDestroySessionComplete);
+
+		}
+	}
 }
 
 void UIonicSparkGameInstance::LoadMainMenu()
@@ -67,7 +85,7 @@ void UIonicSparkGameInstance::ToggleSettingsMenu()
 	else
 	{
 		UE_LOG(LogTemp, Error, TEXT("false"));
-		SettingsMenu->RemoveFromViewport();
+		SettingsMenu->RemoveFromParent();
 
 		bSettingsMenuActive = false;
 	}
@@ -96,4 +114,69 @@ void UIonicSparkGameInstance::LockMouseCursor()
 		PlayerController = GetWorld()->GetFirstPlayerController();
 		LockMouseCursor();
 	}
+}
+
+
+void UIonicSparkGameInstance::Host()
+{
+	if (SessionInterface.IsValid())
+	{
+		auto ExistingSession = SessionInterface->GetNamedSession(SessionName);
+		if (ExistingSession != nullptr)
+		{
+			SessionInterface->DestroySession(SessionName);
+		}
+		else
+		{
+			CreateSession();
+		}
+
+	}
+}
+
+
+void UIonicSparkGameInstance::OnCreateSessionComplete(FName CreatedSessionName, bool Success)
+{
+	if (MainMenu == nullptr)
+	{
+		return;
+	}
+
+	MainMenu->RemoveFromParent();
+
+	UEngine* Engine = GetEngine();
+	if (!ensure(Engine != nullptr)) return;
+
+	Engine->AddOnScreenDebugMessage(0, 2, FColor::Green, TEXT("Hosting"));
+
+	UWorld* World = GetWorld();
+	if (!ensure(World != nullptr)) return;
+
+	World->ServerTravel("/Game/Maps/TestLevel?listen");
+
+}
+
+
+void UIonicSparkGameInstance::OnDestroySessionComplete(FName DestroyedSessionName, bool Success)
+{
+	if (Success)
+	{
+		CreateSession();
+	}
+}
+
+
+void UIonicSparkGameInstance::CreateSession()
+{
+	if (SessionInterface.IsValid())
+	{
+		FOnlineSessionSettings SessionSettings;
+
+		SessionSettings.bIsLANMatch = true;
+		SessionSettings.NumPublicConnections = 2;
+		SessionSettings.bShouldAdvertise = true;
+
+		SessionInterface->CreateSession(0, SessionName, SessionSettings);
+	}
+
 }
