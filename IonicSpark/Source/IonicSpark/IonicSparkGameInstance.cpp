@@ -215,10 +215,13 @@ void UIonicSparkGameInstance::DevMenu()
 		if (!ensure(DeveloperMenu != nullptr)) { return; }
 		DeveloperMenu->AddToViewport();
 
+		bDevMenuActive = true;
+
 	}
 	else
 	{
 		DeveloperMenu->RemoveFromParent();
+		bDevMenuActive = false;
 	}
 	
 }
