@@ -14,7 +14,7 @@ bool UMainMenu::Initialize()
 {
 	bool Success = Super::Initialize();
 
-	if (!Success) return false;
+	if (!Success) { UE_LOG(LogTemp,Error,TEXT("MainMenu failed to initialize")) return false; }
 
 	if (PlayButton == nullptr) return false;
 	PlayButton->OnClicked.AddDynamic(this, &UMainMenu::PlayButtonPressed);
@@ -41,7 +41,7 @@ void UMainMenu::PlayButtonPressed()
 
 void UMainMenu::SettingsButtonPressed()
 {
-	GameInstance->ToggleOptionsMenu();
+	GameInstance->ToggleSettingsMenu();
 }
 
 

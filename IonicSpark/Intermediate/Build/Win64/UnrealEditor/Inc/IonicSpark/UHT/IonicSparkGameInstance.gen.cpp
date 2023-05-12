@@ -13,7 +13,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	IONICSPARK_API UClass* Z_Construct_UClass_UIonicSparkGameInstance();
 	IONICSPARK_API UClass* Z_Construct_UClass_UIonicSparkGameInstance_NoRegister();
 	IONICSPARK_API UClass* Z_Construct_UClass_UMainMenu_NoRegister();
-	IONICSPARK_API UClass* Z_Construct_UClass_UOptionsMenu_NoRegister();
+	IONICSPARK_API UClass* Z_Construct_UClass_USettingsMenu_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_IonicSpark();
 // End Cross Module References
 	DEFINE_FUNCTION(UIonicSparkGameInstance::execUpdateMouseSens)
@@ -24,11 +24,11 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		P_THIS->UpdateMouseSens(Z_Param_NewMouseSens);
 		P_NATIVE_END;
 	}
-	DEFINE_FUNCTION(UIonicSparkGameInstance::execToggleOptionsMenu)
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execToggleSettingsMenu)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->ToggleOptionsMenu();
+		P_THIS->ToggleSettingsMenu();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UIonicSparkGameInstance::execLoadMainMenu)
@@ -43,7 +43,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		UClass* Class = UIonicSparkGameInstance::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "LoadMainMenu", &UIonicSparkGameInstance::execLoadMainMenu },
-			{ "ToggleOptionsMenu", &UIonicSparkGameInstance::execToggleOptionsMenu },
+			{ "ToggleSettingsMenu", &UIonicSparkGameInstance::execToggleSettingsMenu },
 			{ "UpdateMouseSens", &UIonicSparkGameInstance::execUpdateMouseSens },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -70,7 +70,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		}
 		return ReturnFunction;
 	}
-	struct Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics
 	{
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -78,19 +78,19 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics::Function_MetaDataParams[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics::Function_MetaDataParams[] = {
 		{ "Comment", "//Gets called by the level blueprint \n" },
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
 		{ "ToolTip", "Gets called by the level blueprint" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "ToggleOptionsMenu", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu()
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "ToggleSettingsMenu", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -143,14 +143,14 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MainMenu;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_OptionsMenu_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_SettingsMenu_MetaData[];
 #endif
-		static const UECodeGen_Private::FObjectPropertyParams NewProp_OptionsMenu;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_SettingsMenu;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_bOptionsMenuActive_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_bSettingsMenuActive_MetaData[];
 #endif
-		static void NewProp_bOptionsMenuActive_SetBit(void* Obj);
-		static const UECodeGen_Private::FBoolPropertyParams NewProp_bOptionsMenuActive;
+		static void NewProp_bSettingsMenuActive_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_bSettingsMenuActive;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MouseSens_MetaData[];
 #endif
@@ -165,7 +165,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UIonicSparkGameInstance_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu, "LoadMainMenu" }, // 2391286032
-		{ &Z_Construct_UFunction_UIonicSparkGameInstance_ToggleOptionsMenu, "ToggleOptionsMenu" }, // 2022745230
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu, "ToggleSettingsMenu" }, // 2481471958
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_UpdateMouseSens, "UpdateMouseSens" }, // 2010125840
 	};
 #if WITH_METADATA
@@ -178,28 +178,29 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 #endif
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu_MetaData[] = {
+		{ "Category", "IonicSparkGameInstance" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu = { "MainMenu", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UIonicSparkGameInstance, MainMenu), Z_Construct_UClass_UMainMenu_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu = { "MainMenu", nullptr, (EPropertyFlags)0x0040000000080009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UIonicSparkGameInstance, MainMenu), Z_Construct_UClass_UMainMenu_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_OptionsMenu_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_SettingsMenu_MetaData[] = {
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
 	};
 #endif
-	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_OptionsMenu = { "OptionsMenu", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UIonicSparkGameInstance, OptionsMenu), Z_Construct_UClass_UOptionsMenu_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_OptionsMenu_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_OptionsMenu_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_SettingsMenu = { "SettingsMenu", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UIonicSparkGameInstance, SettingsMenu), Z_Construct_UClass_USettingsMenu_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_SettingsMenu_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_SettingsMenu_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive_MetaData[] = {
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
 	};
 #endif
-	void Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive_SetBit(void* Obj)
+	void Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive_SetBit(void* Obj)
 	{
-		((UIonicSparkGameInstance*)Obj)->bOptionsMenuActive = 1;
+		((UIonicSparkGameInstance*)Obj)->bSettingsMenuActive = 1;
 	}
-	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive = { "bOptionsMenuActive", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UIonicSparkGameInstance), &Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive_MetaData)) };
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive = { "bSettingsMenuActive", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(UIonicSparkGameInstance), &Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive_MetaData)) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MouseSens_MetaData[] = {
 		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
@@ -208,8 +209,8 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MouseSens = { "MouseSens", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UIonicSparkGameInstance, MouseSens), METADATA_PARAMS(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MouseSens_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MouseSens_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UIonicSparkGameInstance_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MainMenu,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_OptionsMenu,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bOptionsMenuActive,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_SettingsMenu,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_bSettingsMenuActive,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UIonicSparkGameInstance_Statics::NewProp_MouseSens,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UIonicSparkGameInstance_Statics::StaticCppClassTypeInfo = {
@@ -249,9 +250,9 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 4069444990U) },
+		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 1210638967U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_521455837(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_393858421(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

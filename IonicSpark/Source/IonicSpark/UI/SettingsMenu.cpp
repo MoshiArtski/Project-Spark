@@ -9,6 +9,8 @@
 
 bool USettingsMenu::Initialize()
 {
+	bool Success = Super::Initialize();
+	if (!Success) return false;
 
 	if (MouseSensSlider == nullptr) return false;
 	MouseSensSlider->OnMouseCaptureEnd.AddDynamic(this, &USettingsMenu::SetMouseSens);
@@ -22,6 +24,6 @@ bool USettingsMenu::Initialize()
 
 void USettingsMenu::SetMouseSens()
 {
-	GameInstance->UpdateMouseSens(MouseSensSlider->Value);
+	GameInstance->UpdateMouseSens(MouseSensSlider->GetValue());
 }
 

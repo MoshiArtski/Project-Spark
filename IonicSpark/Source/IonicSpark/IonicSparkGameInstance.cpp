@@ -5,6 +5,8 @@
 
 #include "IonicSparkGameInstance.h"
 #include "Blueprint/UserWidget.h"
+#include "UI/MainMenu.h"
+#include "UI/SettingsMenu.h"
 
 
 
@@ -17,51 +19,64 @@ UIonicSparkGameInstance::UIonicSparkGameInstance(const FObjectInitializer& Objec
 
 	MainMenuClass = MainMenuBPClass.Class;
 
-	ConstructorHelpers::FClassFinder<UUserWidget> OptionsMenuBPClass(TEXT("/Game/Blueprints/UI/WBP_OptionsMenu"));
-	if (!ensure(OptionsMenuBPClass.Class != nullptr)) return;
+	ConstructorHelpers::FClassFinder<UUserWidget> SettingsMenuBPClass(TEXT("/Game/Blueprints/UI/WBP_SettingsMenu"));
+	if (!ensure(SettingsMenuBPClass.Class != nullptr)) return;
 
-	OptionsMenuClass = OptionsMenuBPClass.Class;
+	SettingsMenuClass = SettingsMenuBPClass.Class;
 }
 
 void UIonicSparkGameInstance::Init()
 {
-	PlayerController = GetWorld()->GetFirstPlayerController();
+	Super::Init();
+	//PlayerController = GetWorld()->GetFirstPlayerController();
 }
 
 void UIonicSparkGameInstance::LoadMainMenu()
 {
-	if (MainMenuClass == nullptr) { return; }
+	UE_LOG(LogTemp, Error, TEXT(" LOADING"));
+	if (MainMenuClass == nullptr) { UE_LOG(LogTemp, Error, TEXT("NOT LOADING")); return; }
 
 
 
 	MainMenu = CreateWidget<UMainMenu>(this, MainMenuClass);
 
 	if (!ensure(MainMenu != nullptr)) { return; }
+	UE_LOG(LogTemp, Error, TEXT(" LOADING MainMenu"));
 	MainMenu->AddToViewport();
+
 
 
 	if (PlayerController)
 	{
 		FInputModeUIOnly InputMode;
-		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::LockOnCapture);
 		PlayerController->SetInputMode(InputMode);
 
 		PlayerController->bShowMouseCursor = true;
 	}
 }
 
-void UIonicSparkGameInstance::ToggleOptionsMenu()
+void UIonicSparkGameInstance::ToggleSettingsMenu()
 {
 
-	if (!bOptionsMenuActive)
+	if (!bSettingsMenuActive)
 	{
-		if (OptionsMenuClass == nullptr) { return; }
+		if (SettingsMenuClass == nullptr) { return; }
 
 
-		OptionsMenu = CreateWidget<UOptionsMenu>(this, OptionsMenuClass);
+		SettingsMenu = CreateWidget<USettingsMenu>(this, SettingsMenuClass);
 
-		if (!ensure(OptionsMenu != nullptr)) { return; }
-		OptionsMenu->AddToViewport();
+		if (!ensure(SettingsMenu != nullptr)) { return; }
+		SettingsMenu->AddToViewport();
+
+		if (PlayerController)
+		{
+			FInputModeUIOnly InputMode;
+			//InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+			PlayerController->SetInputMode(InputMode);
+
+			PlayerController->bShowMouseCursor = true;
+		}
 	}
 	return;
 }

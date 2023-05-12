@@ -2,8 +2,6 @@
 
 #pragma once
 
-#include "UI/MainMenu.h"
-#include "UI/OptionsMenu.h"
 
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
@@ -26,7 +24,7 @@ public:
 
 
 	UFUNCTION()
-		void ToggleOptionsMenu();
+		void ToggleSettingsMenu();
 
 	UFUNCTION()
 		void UpdateMouseSens(float NewMouseSens);
@@ -42,22 +40,22 @@ private:
 
 	TSubclassOf<class UUserWidget> MainMenuClass;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere)
 	class UMainMenu* MainMenu;
 
 
 
 	//Settings Menu
-	TSubclassOf<class UOptionsMenu> OptionsMenuClass;
+	TSubclassOf<class UUserWidget> SettingsMenuClass;
 
 	UPROPERTY()
-	class UOptionsMenu* OptionsMenu;
+	class USettingsMenu* SettingsMenu;
 
 	UPROPERTY()
-	bool bOptionsMenuActive = false;
+	bool bSettingsMenuActive = false;
 
 	UPROPERTY()
-		float MouseSens;
+	float MouseSens;
 
 
 

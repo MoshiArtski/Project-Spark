@@ -6,7 +6,14 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/MainMenuLevel.umap",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_SettingsMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/TestMainMenu.umap",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMe1nu.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/MyIonicSparkGameInstance.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/NewBlueprint.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_OptionsMenu.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/NewBlueprint.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/MainMenuLevel.umap"
 			]
