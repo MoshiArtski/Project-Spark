@@ -28,55 +28,48 @@ UIonicSparkGameInstance::UIonicSparkGameInstance(const FObjectInitializer& Objec
 void UIonicSparkGameInstance::Init()
 {
 	Super::Init();
-	//PlayerController = GetWorld()->GetFirstPlayerController();
 }
 
 void UIonicSparkGameInstance::LoadMainMenu()
 {
-	UE_LOG(LogTemp, Error, TEXT(" LOADING"));
-	if (MainMenuClass == nullptr) { UE_LOG(LogTemp, Error, TEXT("NOT LOADING")); return; }
-
-
+	if (MainMenuClass == nullptr) { return; }
 
 	MainMenu = CreateWidget<UMainMenu>(this, MainMenuClass);
 
 	if (!ensure(MainMenu != nullptr)) { return; }
-	UE_LOG(LogTemp, Error, TEXT(" LOADING MainMenu"));
 	MainMenu->AddToViewport();
 
 
 
-	if (PlayerController)
-	{
-		FInputModeUIOnly InputMode;
-		InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::LockOnCapture);
-		PlayerController->SetInputMode(InputMode);
-
-		PlayerController->bShowMouseCursor = true;
-	}
+	LockMouseCursor();
 }
 
 void UIonicSparkGameInstance::ToggleSettingsMenu()
 {
+	
 
+	
+	UE_LOG(LogTemp, Error, TEXT("Toggling settings menu"));
 	if (!bSettingsMenuActive)
 	{
 		if (SettingsMenuClass == nullptr) { return; }
-
-
 		SettingsMenu = CreateWidget<USettingsMenu>(this, SettingsMenuClass);
 
 		if (!ensure(SettingsMenu != nullptr)) { return; }
 		SettingsMenu->AddToViewport();
 
-		if (PlayerController)
-		{
-			FInputModeUIOnly InputMode;
-			//InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-			PlayerController->SetInputMode(InputMode);
+		bSettingsMenuActive = true;
 
-			PlayerController->bShowMouseCursor = true;
-		}
+		LockMouseCursor();
+
+		UE_LOG(LogTemp, Error, TEXT("true"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("false"));
+		SettingsMenu->RemoveFromViewport();
+
+		bSettingsMenuActive = false;
 	}
 	return;
 }
@@ -86,5 +79,21 @@ void UIonicSparkGameInstance::UpdateMouseSens(float NewMouseSens)
 	if (PlayerController)
 	{
 		PlayerController->PlayerInput->SetMouseSensitivity(NewMouseSens); //Sets the speed of the actual cursor
+	}
+}
+
+void UIonicSparkGameInstance::LockMouseCursor()
+{
+	if (PlayerController)
+	{
+		FInputModeUIOnly InputMode;
+		PlayerController->SetInputMode(InputMode);
+
+		PlayerController->bShowMouseCursor = true;
+	}
+	else
+	{
+		PlayerController = GetWorld()->GetFirstPlayerController();
+		LockMouseCursor();
 	}
 }

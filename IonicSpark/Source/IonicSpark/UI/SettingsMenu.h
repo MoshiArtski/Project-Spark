@@ -22,14 +22,25 @@ protected:
 private:
 
 	UPROPERTY()
-		class UIonicSparkGameInstance* GameInstance;
+	class UIonicSparkGameInstance* GameInstance;
 
 
+	//Back Button
 	UPROPERTY(meta = (BindWidget))
-		class USlider* MouseSensSlider;
-
+	class UButton* BackButton;
 
 	UFUNCTION()
-		void SetMouseSens();
+	void OnBackButtonPressed();
+	//
+
+
+
+	//Mouse sens slider
+	UPROPERTY(meta = (BindWidget))
+	class USlider* MouseSensSlider;
+
+	UFUNCTION()
+	void SetMouseSens();
+	//
 
 };

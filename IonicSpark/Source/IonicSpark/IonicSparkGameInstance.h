@@ -56,6 +56,11 @@ private:
 
 	UPROPERTY()
 	float MouseSens;
+	//
+
+
+	UFUNCTION()
+	void LockMouseCursor();
 
 
 

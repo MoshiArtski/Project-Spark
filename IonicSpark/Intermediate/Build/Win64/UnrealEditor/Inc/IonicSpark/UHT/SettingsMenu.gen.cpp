@@ -12,6 +12,7 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 	IONICSPARK_API UClass* Z_Construct_UClass_UIonicSparkGameInstance_NoRegister();
 	IONICSPARK_API UClass* Z_Construct_UClass_USettingsMenu();
 	IONICSPARK_API UClass* Z_Construct_UClass_USettingsMenu_NoRegister();
+	UMG_API UClass* Z_Construct_UClass_UButton_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_USlider_NoRegister();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_IonicSpark();
@@ -23,13 +24,43 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		P_THIS->SetMouseSens();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(USettingsMenu::execOnBackButtonPressed)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnBackButtonPressed();
+		P_NATIVE_END;
+	}
 	void USettingsMenu::StaticRegisterNativesUSettingsMenu()
 	{
 		UClass* Class = USettingsMenu::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "OnBackButtonPressed", &USettingsMenu::execOnBackButtonPressed },
 			{ "SetMouseSens", &USettingsMenu::execSetMouseSens },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USettingsMenu, nullptr, "OnBackButtonPressed", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_USettingsMenu_SetMouseSens_Statics
 	{
@@ -70,6 +101,10 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_GameInstance;
 #if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_BackButton_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_BackButton;
+#if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MouseSensSlider_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MouseSensSlider;
@@ -82,6 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_IonicSpark,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_USettingsMenu_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed, "OnBackButtonPressed" }, // 1545276693
 		{ &Z_Construct_UFunction_USettingsMenu_SetMouseSens, "SetMouseSens" }, // 408362021
 	};
 #if WITH_METADATA
@@ -98,15 +134,28 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USettingsMenu_Statics::NewProp_GameInstance = { "GameInstance", nullptr, (EPropertyFlags)0x0040000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USettingsMenu, GameInstance), Z_Construct_UClass_UIonicSparkGameInstance_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USettingsMenu_Statics::NewProp_GameInstance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USettingsMenu_Statics::NewProp_GameInstance_MetaData)) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton_MetaData[] = {
 		{ "BindWidget", "" },
+		{ "Comment", "//Back Button\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
+		{ "ToolTip", "Back Button" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton = { "BackButton", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USettingsMenu, BackButton), Z_Construct_UClass_UButton_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "Comment", "//Mouse sens slider\n" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
+		{ "ToolTip", "Mouse sens slider" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider = { "MouseSensSlider", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USettingsMenu, MouseSensSlider), Z_Construct_UClass_USlider_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USettingsMenu_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_GameInstance,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USettingsMenu_Statics::StaticCppClassTypeInfo = {
@@ -146,9 +195,9 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USettingsMenu, USettingsMenu::StaticClass, TEXT("USettingsMenu"), &Z_Registration_Info_UClass_USettingsMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USettingsMenu), 3222605323U) },
+		{ Z_Construct_UClass_USettingsMenu, USettingsMenu::StaticClass, TEXT("USettingsMenu"), &Z_Registration_Info_UClass_USettingsMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USettingsMenu), 1481265891U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_3494176455(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_3183102817(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

@@ -17,6 +17,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_16_SPARSE_DATA
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_16_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execLockMouseCursor); \
 	DECLARE_FUNCTION(execUpdateMouseSens); \
 	DECLARE_FUNCTION(execToggleSettingsMenu); \
 	DECLARE_FUNCTION(execLoadMainMenu);
@@ -24,6 +25,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execLockMouseCursor); \
 	DECLARE_FUNCTION(execUpdateMouseSens); \
 	DECLARE_FUNCTION(execToggleSettingsMenu); \
 	DECLARE_FUNCTION(execLoadMainMenu);

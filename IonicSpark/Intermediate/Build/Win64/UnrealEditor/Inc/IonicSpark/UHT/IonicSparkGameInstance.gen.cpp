@@ -16,6 +16,13 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	IONICSPARK_API UClass* Z_Construct_UClass_USettingsMenu_NoRegister();
 	UPackage* Z_Construct_UPackage__Script_IonicSpark();
 // End Cross Module References
+	DEFINE_FUNCTION(UIonicSparkGameInstance::execLockMouseCursor)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->LockMouseCursor();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UIonicSparkGameInstance::execUpdateMouseSens)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_NewMouseSens);
@@ -43,6 +50,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		UClass* Class = UIonicSparkGameInstance::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "LoadMainMenu", &UIonicSparkGameInstance::execLoadMainMenu },
+			{ "LockMouseCursor", &UIonicSparkGameInstance::execLockMouseCursor },
 			{ "ToggleSettingsMenu", &UIonicSparkGameInstance::execToggleSettingsMenu },
 			{ "UpdateMouseSens", &UIonicSparkGameInstance::execUpdateMouseSens },
 		};
@@ -67,6 +75,29 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		if (!ReturnFunction)
 		{
 			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//\n" },
+		{ "ModuleRelativePath", "IonicSparkGameInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UIonicSparkGameInstance, nullptr, "LockMouseCursor", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -165,6 +196,7 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UIonicSparkGameInstance_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LoadMainMenu, "LoadMainMenu" }, // 2391286032
+		{ &Z_Construct_UFunction_UIonicSparkGameInstance_LockMouseCursor, "LockMouseCursor" }, // 541153005
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_ToggleSettingsMenu, "ToggleSettingsMenu" }, // 2481471958
 		{ &Z_Construct_UFunction_UIonicSparkGameInstance_UpdateMouseSens, "UpdateMouseSens" }, // 2010125840
 	};
@@ -250,9 +282,9 @@ void EmptyLinkFunctionForGeneratedCodeIonicSparkGameInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 1210638967U) },
+		{ Z_Construct_UClass_UIonicSparkGameInstance, UIonicSparkGameInstance::StaticClass, TEXT("UIonicSparkGameInstance"), &Z_Registration_Info_UClass_UIonicSparkGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIonicSparkGameInstance), 1338926590U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_393858421(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_1706449409(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

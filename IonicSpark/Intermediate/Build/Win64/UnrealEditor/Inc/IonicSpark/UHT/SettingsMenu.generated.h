@@ -17,12 +17,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_SPARSE_DATA
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execSetMouseSens);
+	DECLARE_FUNCTION(execSetMouseSens); \
+	DECLARE_FUNCTION(execOnBackButtonPressed);
 
 
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execSetMouseSens);
+	DECLARE_FUNCTION(execSetMouseSens); \
+	DECLARE_FUNCTION(execOnBackButtonPressed);
 
 
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_ACCESSORS
