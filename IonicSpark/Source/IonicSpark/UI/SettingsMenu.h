@@ -35,12 +35,18 @@ private:
 
 
 
-	//Mouse sens slider
+	//Sliders
 	UPROPERTY(meta = (BindWidget))
 	class USlider* MouseSensSlider;
 
 	UFUNCTION()
 	void SetMouseSens();
+
+	UPROPERTY(meta = (BindWidget))
+	class USlider* MusicVolumeSlider;
+
+	UFUNCTION()
+	void SetMusicVolume();
 	//
 
 };

@@ -21,7 +21,6 @@ class IONICSPARK_API UIonicSparkGameInstance : public UGameInstance
 public:
 
 
-
 	//Networking
 
 	UFUNCTION()
@@ -29,16 +28,18 @@ public:
 
 	//
 
-	UFUNCTION(BlueprintCallable)
-		void LoadMainMenu(); //Gets called by the level blueprint 
 
+
+	UFUNCTION(BlueprintCallable)
+	void LoadMainMenu(); //Gets called by the level blueprint 
 
 	UFUNCTION()
 		void ToggleSettingsMenu();
 
-	UFUNCTION()
-		void UpdateMouseSens(float NewMouseSens);
 
+	//Geters
+
+	float GetMusicVolume() const { return MusicVolume; }
 
 
 protected:
@@ -77,24 +78,70 @@ private:
 
 
 
+
+
+	UFUNCTION()
+	void LockMouseCursor(); //Locks mouse cursor so it dosent dissapear when clicking on widgets
+
+
+
+
 	//Settings Menu
 	TSubclassOf<class UUserWidget> SettingsMenuClass;
 
 	UPROPERTY()
-	class USettingsMenu* SettingsMenu;
+		class USettingsMenu* SettingsMenu;
 
 	UPROPERTY()
-	bool bSettingsMenuActive = false;
+		bool bSettingsMenuActive = false;
 
-	UPROPERTY()
-	float MouseSens;
+	
 	//
 
 
+	
+	//Settings
+
+public:
+
 	UFUNCTION()
-	void LockMouseCursor();
+	void UpdateMusicVolume(float NewVolume);
+
+	UFUNCTION()
+	void UpdateMouseSens(float NewMouseSens);
+
+private:
+
+	UPROPERTY()
+	float MusicVolume = 1.f;
+
+	UPROPERTY()
+	float MouseSens =1.f;
 
 
 
+
+
+
+	//Console Commands
+
+
+
+
+	// Dev menu
+	UFUNCTION(exec)
+	void DevMenu();
+
+	TSubclassOf<class UUserWidget> DeveloperMenuClass;
+
+	UPROPERTY()
+	class UDeveloperMenu* DeveloperMenu;
+
+	UPROPERTY()
+	bool bDevMenuActive = false;
+
+
+
+	//
 
 };

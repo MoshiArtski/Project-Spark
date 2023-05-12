@@ -34,6 +34,7 @@
 /NODEFAULTLIB:"LIBCPD"
 /FUNCTIONPADMIN:6
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\IonicSparkEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\DeveloperMenu.gen.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSpark.init.gen.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSparkGameInstance.gen.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSparkGameModeBase.gen.cpp.obj"
@@ -42,6 +43,7 @@
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSpark.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSparkGameInstance.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\IonicSparkGameModeBase.cpp.obj"
+"C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\DeveloperMenu.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\MainMenu.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\SettingsMenu.cpp.obj"
 "C:\UnrealEngine\GitRepFNF\Project-Spark\IonicSpark\Intermediate\Build\Win64\UnrealEditor\Development\IonicSpark\Default.rc2.res"

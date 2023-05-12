@@ -7,15 +7,18 @@
 			"files": [
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/MainMenuLevel.umap",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_SettingsMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/TestLevel.umap",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/GameSetting/BP_IonicSparkGameModeBase.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_DeveloperMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Sounds/mixkit-game-show-suspense-waiting-667.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Sounds/mixkit-arcade-retro-game-over-213.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/TestMainMenu.umap",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMe1nu.uasset",
-				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMenu.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/MyIonicSparkGameInstance.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/NewBlueprint.uasset",
-				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Maps/TestLevel.umap",
-				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_MainMenu.uasset",
+				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/BP_DeveloperMenu.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/WBP_OptionsMenu.uasset",
-				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/Blueprints/UI/NewBlueprint.uasset",
 				"C:/UnrealEngine/GitRepFNF/Project-Spark/IonicSpark/Content/MainMenuLevel.umap"
 			]
 		}

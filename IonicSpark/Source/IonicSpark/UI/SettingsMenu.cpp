@@ -18,6 +18,9 @@ bool USettingsMenu::Initialize()
 	if (MouseSensSlider == nullptr) return false;
 	MouseSensSlider->OnMouseCaptureEnd.AddDynamic(this, &USettingsMenu::SetMouseSens);
 
+	if (MusicVolumeSlider == nullptr) return false;
+	MusicVolumeSlider->OnMouseCaptureEnd.AddDynamic(this, &USettingsMenu::SetMusicVolume);
+
 	if (BackButton == nullptr) return false;
 	BackButton->OnClicked.AddDynamic(this, &USettingsMenu::OnBackButtonPressed);
 	//
@@ -32,6 +35,12 @@ void USettingsMenu::SetMouseSens()
 {
 	if (GameInstance == nullptr) return;
 	GameInstance->UpdateMouseSens(MouseSensSlider->GetValue());
+}
+
+void USettingsMenu::SetMusicVolume()
+{
+	if (GameInstance == nullptr) return;
+	GameInstance->UpdateMusicVolume(MusicVolumeSlider->GetValue());
 }
 
 

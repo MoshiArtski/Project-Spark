@@ -17,6 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_IonicSpark();
 // End Cross Module References
+	DEFINE_FUNCTION(USettingsMenu::execSetMusicVolume)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetMusicVolume();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(USettingsMenu::execSetMouseSens)
 	{
 		P_FINISH;
@@ -37,6 +44,7 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "OnBackButtonPressed", &USettingsMenu::execOnBackButtonPressed },
 			{ "SetMouseSens", &USettingsMenu::execSetMouseSens },
+			{ "SetMusicVolume", &USettingsMenu::execSetMusicVolume },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -84,6 +92,28 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USettingsMenu, nullptr, "SetMusicVolume", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_USettingsMenu_SetMusicVolume()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USettingsMenu_SetMusicVolume_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(USettingsMenu);
 	UClass* Z_Construct_UClass_USettingsMenu_NoRegister()
 	{
@@ -108,6 +138,10 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_MouseSensSlider_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_MouseSensSlider;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MusicVolumeSlider_MetaData[];
+#endif
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_MusicVolumeSlider;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -119,6 +153,7 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_USettingsMenu_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_USettingsMenu_OnBackButtonPressed, "OnBackButtonPressed" }, // 1545276693
 		{ &Z_Construct_UFunction_USettingsMenu_SetMouseSens, "SetMouseSens" }, // 408362021
+		{ &Z_Construct_UFunction_USettingsMenu_SetMusicVolume, "SetMusicVolume" }, // 3660381578
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::Class_MetaDataParams[] = {
@@ -146,17 +181,26 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData[] = {
 		{ "BindWidget", "" },
-		{ "Comment", "//Mouse sens slider\n" },
+		{ "Comment", "//Sliders\n" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
-		{ "ToolTip", "Mouse sens slider" },
+		{ "ToolTip", "Sliders" },
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider = { "MouseSensSlider", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USettingsMenu, MouseSensSlider), Z_Construct_UClass_USlider_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider_MetaData)) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USettingsMenu_Statics::NewProp_MusicVolumeSlider_MetaData[] = {
+		{ "BindWidget", "" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "UI/SettingsMenu.h" },
+	};
+#endif
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_USettingsMenu_Statics::NewProp_MusicVolumeSlider = { "MusicVolumeSlider", nullptr, (EPropertyFlags)0x0040000000080008, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(USettingsMenu, MusicVolumeSlider), Z_Construct_UClass_USlider_NoRegister, METADATA_PARAMS(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MusicVolumeSlider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USettingsMenu_Statics::NewProp_MusicVolumeSlider_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USettingsMenu_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_GameInstance,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_BackButton,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_MouseSensSlider,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USettingsMenu_Statics::NewProp_MusicVolumeSlider,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_USettingsMenu_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<USettingsMenu>::IsAbstract,
@@ -195,9 +239,9 @@ void EmptyLinkFunctionForGeneratedCodeSettingsMenu() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_USettingsMenu, USettingsMenu::StaticClass, TEXT("USettingsMenu"), &Z_Registration_Info_UClass_USettingsMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USettingsMenu), 1481265891U) },
+		{ Z_Construct_UClass_USettingsMenu, USettingsMenu::StaticClass, TEXT("USettingsMenu"), &Z_Registration_Info_UClass_USettingsMenu, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USettingsMenu), 3419494291U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_3183102817(TEXT("/Script/IonicSpark"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_2551908831(TEXT("/Script/IonicSpark"),
 		Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

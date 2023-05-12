@@ -66,6 +66,12 @@
     <Filter Include="Source\IonicSpark\UI">
       <UniqueIdentifier>{BF2B8E42-F50C-36A1-AFA7-6686DAA22936}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\IonicSpark\UI\DeveloperMenu.cpp">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\UI\DeveloperMenu.h">
+      <Filter>Source\IonicSpark\UI</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\IonicSpark\UI\MainMenu.cpp">
       <Filter>Source\IonicSpark\UI</Filter>
     </ClCompile>

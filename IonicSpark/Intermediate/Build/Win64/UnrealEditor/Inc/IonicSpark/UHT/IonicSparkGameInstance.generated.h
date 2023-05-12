@@ -17,11 +17,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_17_SPARSE_DATA
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_17_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execDevMenu); \
+	DECLARE_FUNCTION(execUpdateMouseSens); \
+	DECLARE_FUNCTION(execUpdateMusicVolume); \
 	DECLARE_FUNCTION(execLockMouseCursor); \
 	DECLARE_FUNCTION(execOnDestroySessionComplete); \
 	DECLARE_FUNCTION(execOnCreateSessionComplete); \
 	DECLARE_FUNCTION(execCreateSession); \
-	DECLARE_FUNCTION(execUpdateMouseSens); \
 	DECLARE_FUNCTION(execToggleSettingsMenu); \
 	DECLARE_FUNCTION(execLoadMainMenu); \
 	DECLARE_FUNCTION(execHost);
@@ -29,11 +31,13 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_IonicSpark_Source_IonicSpark_IonicSparkGameInstance_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execDevMenu); \
+	DECLARE_FUNCTION(execUpdateMouseSens); \
+	DECLARE_FUNCTION(execUpdateMusicVolume); \
 	DECLARE_FUNCTION(execLockMouseCursor); \
 	DECLARE_FUNCTION(execOnDestroySessionComplete); \
 	DECLARE_FUNCTION(execOnCreateSessionComplete); \
 	DECLARE_FUNCTION(execCreateSession); \
-	DECLARE_FUNCTION(execUpdateMouseSens); \
 	DECLARE_FUNCTION(execToggleSettingsMenu); \
 	DECLARE_FUNCTION(execLoadMainMenu); \
 	DECLARE_FUNCTION(execHost);

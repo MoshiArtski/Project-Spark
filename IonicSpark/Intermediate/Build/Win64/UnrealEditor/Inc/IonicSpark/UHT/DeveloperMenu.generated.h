@@ -1,0 +1,106 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+/*===========================================================================
+	Generated code exported from UnrealHeaderTool.
+	DO NOT modify this manually! Edit the corresponding .h files instead!
+===========================================================================*/
+
+// IWYU pragma: private, include "UI/DeveloperMenu.h"
+#include "UObject/ObjectMacros.h"
+#include "UObject/ScriptMacros.h"
+
+PRAGMA_DISABLE_DEPRECATION_WARNINGS
+#ifdef IONICSPARK_DeveloperMenu_generated_h
+#error "DeveloperMenu.generated.h already included, missing '#pragma once' in DeveloperMenu.h"
+#endif
+#define IONICSPARK_DeveloperMenu_generated_h
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_SPARSE_DATA
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execSoundTestButtonPressed);
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSoundTestButtonPressed);
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_ACCESSORS
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_INCLASS_NO_PURE_DECLS \
+private: \
+	static void StaticRegisterNativesUDeveloperMenu(); \
+	friend struct Z_Construct_UClass_UDeveloperMenu_Statics; \
+public: \
+	DECLARE_CLASS(UDeveloperMenu, UUserWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/IonicSpark"), NO_API) \
+	DECLARE_SERIALIZER(UDeveloperMenu)
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_INCLASS \
+private: \
+	static void StaticRegisterNativesUDeveloperMenu(); \
+	friend struct Z_Construct_UClass_UDeveloperMenu_Statics; \
+public: \
+	DECLARE_CLASS(UDeveloperMenu, UUserWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/IonicSpark"), NO_API) \
+	DECLARE_SERIALIZER(UDeveloperMenu)
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_STANDARD_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UDeveloperMenu(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDeveloperMenu) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDeveloperMenu); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDeveloperMenu); \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UDeveloperMenu(UDeveloperMenu&&); \
+	NO_API UDeveloperMenu(const UDeveloperMenu&); \
+public: \
+	NO_API virtual ~UDeveloperMenu();
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_ENHANCED_CONSTRUCTORS \
+	/** Standard constructor, called after all reflected properties have been initialized */ \
+	NO_API UDeveloperMenu(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+private: \
+	/** Private move- and copy-constructors, should never be used */ \
+	NO_API UDeveloperMenu(UDeveloperMenu&&); \
+	NO_API UDeveloperMenu(const UDeveloperMenu&); \
+public: \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UDeveloperMenu); \
+	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UDeveloperMenu); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UDeveloperMenu) \
+	NO_API virtual ~UDeveloperMenu();
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_12_PROLOG
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_GENERATED_BODY_LEGACY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_SPARSE_DATA \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_RPC_WRAPPERS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_ACCESSORS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_INCLASS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_STANDARD_CONSTRUCTORS \
+public: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+#define FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_GENERATED_BODY \
+PRAGMA_DISABLE_DEPRECATION_WARNINGS \
+public: \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_SPARSE_DATA \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_ACCESSORS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_INCLASS_NO_PURE_DECLS \
+	FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h_15_ENHANCED_CONSTRUCTORS \
+private: \
+PRAGMA_ENABLE_DEPRECATION_WARNINGS
+
+
+template<> IONICSPARK_API UClass* StaticClass<class UDeveloperMenu>();
+
+#undef CURRENT_FILE_ID
+#define CURRENT_FILE_ID FID_IonicSpark_Source_IonicSpark_UI_DeveloperMenu_h
+
+
+PRAGMA_ENABLE_DEPRECATION_WARNINGS

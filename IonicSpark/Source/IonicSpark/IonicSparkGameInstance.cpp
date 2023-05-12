@@ -10,6 +10,7 @@
 
 #include "UI/MainMenu.h"
 #include "UI/SettingsMenu.h"
+#include "UI/DeveloperMenu.h"
 
 
 const static FName SessionName = TEXT("Ionic Session");
@@ -26,6 +27,11 @@ UIonicSparkGameInstance::UIonicSparkGameInstance(const FObjectInitializer& Objec
 	if (!ensure(SettingsMenuBPClass.Class != nullptr)) return;
 
 	SettingsMenuClass = SettingsMenuBPClass.Class;
+
+	ConstructorHelpers::FClassFinder<UUserWidget> DeveloperMenuBPClass(TEXT("/Game/Blueprints/UI/WBP_DeveloperMenu"));
+	if (!ensure(DeveloperMenuBPClass.Class != nullptr)) return;
+
+	DeveloperMenuClass = DeveloperMenuBPClass.Class;
 }
 
 void UIonicSparkGameInstance::Init()
@@ -64,10 +70,6 @@ void UIonicSparkGameInstance::LoadMainMenu()
 
 void UIonicSparkGameInstance::ToggleSettingsMenu()
 {
-	
-
-	
-	UE_LOG(LogTemp, Error, TEXT("Toggling settings menu"));
 	if (!bSettingsMenuActive)
 	{
 		if (SettingsMenuClass == nullptr) { return; }
@@ -92,14 +94,7 @@ void UIonicSparkGameInstance::ToggleSettingsMenu()
 	return;
 }
 
-void UIonicSparkGameInstance::UpdateMouseSens(float NewMouseSens)
-{
-	if (PlayerController)
-	{
-		PlayerController->PlayerInput->SetMouseSensitivity(NewMouseSens); //Sets the speed of the actual cursor
-	}
-}
-
+//Locks the mouse cursor so it cannot disappear when clicking on a widget.
 void UIonicSparkGameInstance::LockMouseCursor()
 {
 	if (PlayerController)
@@ -173,10 +168,57 @@ void UIonicSparkGameInstance::CreateSession()
 		FOnlineSessionSettings SessionSettings;
 
 		SessionSettings.bIsLANMatch = true;
-		SessionSettings.NumPublicConnections = 2;
+		SessionSettings.NumPublicConnections = 4;
 		SessionSettings.bShouldAdvertise = true;
 
 		SessionInterface->CreateSession(0, SessionName, SessionSettings);
 	}
 
+}
+
+
+
+
+
+
+
+
+// Settings 
+
+void UIonicSparkGameInstance::UpdateMusicVolume(float NewVolume)
+{
+	MusicVolume = NewVolume;
+}
+
+void UIonicSparkGameInstance::UpdateMouseSens(float NewMouseSens)
+{
+	if (PlayerController)
+	{
+		PlayerController->PlayerInput->SetMouseSensitivity(NewMouseSens); //Sets the speed of the actual cursor
+	}
+}
+
+
+
+
+
+//Console Commands
+
+void UIonicSparkGameInstance::DevMenu()
+{
+	if (!bDevMenuActive)
+	{
+
+		if (DeveloperMenuClass == nullptr) { return; }
+		DeveloperMenu = CreateWidget<UDeveloperMenu>(this, DeveloperMenuClass);
+
+		if (!ensure(DeveloperMenu != nullptr)) { return; }
+		DeveloperMenu->AddToViewport();
+
+	}
+	else
+	{
+		DeveloperMenu->RemoveFromParent();
+	}
+	
 }
