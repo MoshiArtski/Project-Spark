@@ -34,13 +34,15 @@ public:
 	void LoadMainMenu(); //Gets called by the level blueprint 
 
 	UFUNCTION()
-		void ToggleSettingsMenu();
+	void ToggleSettingsMenu();
 
+
+	UPROPERTY(EditAnywhere)
+	class UMainMenu* MainMenu;
 
 	//Geters
 
 	float GetMusicVolume() const { return MusicVolume; }
-
 
 protected:
 
@@ -73,8 +75,7 @@ private:
 
 	TSubclassOf<class UUserWidget> MainMenuClass;
 
-	UPROPERTY(EditAnywhere)
-	class UMainMenu* MainMenu;
+	
 
 
 
@@ -92,17 +93,16 @@ private:
 	UPROPERTY()
 		class USettingsMenu* SettingsMenu;
 
-	UPROPERTY()
-		bool bSettingsMenuActive = false;
-
 	
-	//
 
 
 	
 	//Settings
 
 public:
+
+	UPROPERTY()
+	bool bSettingsMenuActive = false;
 
 	UFUNCTION()
 	void UpdateMusicVolume(float NewVolume);
@@ -123,25 +123,27 @@ private:
 
 
 
-	//Console Commands
 
 
 
 
-	// Dev menu
-	UFUNCTION(exec)
-	void DevMenu();
-
-	TSubclassOf<class UUserWidget> DeveloperMenuClass;
-
-	UPROPERTY()
-	class UDeveloperMenu* DeveloperMenu;
-
-	UPROPERTY()
-	bool bDevMenuActive = false;
 
 
 
-	//
+	//======Console Commands=========
+
+
+	// ==================DEV MENU=========================
+	UFUNCTION(exec)										//
+	void DevMenu();										//
+														//
+	TSubclassOf<class UUserWidget> DeveloperMenuClass;	//
+														//
+	UPROPERTY()											//
+	class UDeveloperMenu* DeveloperMenu;				//
+														//
+	UPROPERTY()											//
+	bool bDevMenuActive = false;						//
+	//====================================================
 
 };

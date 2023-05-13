@@ -99,7 +99,7 @@ void UIonicSparkGameInstance::LockMouseCursor()
 {
 	if (PlayerController)
 	{
-		FInputModeUIOnly InputMode;
+		FInputModeGameAndUI  InputMode;
 		PlayerController->SetInputMode(InputMode);
 
 		PlayerController->bShowMouseCursor = true;

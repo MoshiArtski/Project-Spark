@@ -9,6 +9,8 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+struct FInputActionKeyMapping;
+struct FInputChord;
 #ifdef IONICSPARK_SettingsMenu_generated_h
 #error "SettingsMenu.generated.h already included, missing '#pragma once' in SettingsMenu.h"
 #endif
@@ -17,6 +19,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_SPARSE_DATA
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execGetNoKeySpecifiedText); \
+	DECLARE_FUNCTION(execGetInputActionMap); \
+	DECLARE_FUNCTION(execRemapActionKey); \
+	DECLARE_FUNCTION(execOnMenuNavigationKeySlected); \
 	DECLARE_FUNCTION(execSetMusicVolume); \
 	DECLARE_FUNCTION(execSetMouseSens); \
 	DECLARE_FUNCTION(execOnBackButtonPressed);
@@ -24,6 +30,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define FID_IonicSpark_Source_IonicSpark_UI_SettingsMenu_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execGetNoKeySpecifiedText); \
+	DECLARE_FUNCTION(execGetInputActionMap); \
+	DECLARE_FUNCTION(execRemapActionKey); \
+	DECLARE_FUNCTION(execOnMenuNavigationKeySlected); \
 	DECLARE_FUNCTION(execSetMusicVolume); \
 	DECLARE_FUNCTION(execSetMouseSens); \
 	DECLARE_FUNCTION(execOnBackButtonPressed);

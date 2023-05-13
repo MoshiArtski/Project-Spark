@@ -14,6 +14,9 @@ class IONICSPARK_API USettingsMenu : public UUserWidget
 {
 	GENERATED_BODY()
 
+public:
+
+
 
 protected:
 
@@ -48,5 +51,37 @@ private:
 	UFUNCTION()
 	void SetMusicVolume();
 	//
+
+
+
+
+
+
+	//=====================Controls & Key Selectors======================//
+																		 //
+	class UInputSettings* InputSettings;								 //
+																		 //
+	UPROPERTY(meta = (BindWidget))										 //
+	class UInputKeySelector* MenuNavigationKeySelector;					 //
+																		 //
+																		 //
+																		 //
+																		 //
+																		 //
+																		 //
+																		 //
+	UFUNCTION()															 //
+	void OnMenuNavigationKeySlected(FInputChord SelectedKey);			 //
+																		 //
+	UFUNCTION()															 //
+	void RemapActionKey(FInputChord SelectedKey, FName ActionName);		 //
+																		 //
+	UFUNCTION()															 //
+	FInputActionKeyMapping GetInputActionMap(FName ActionName);			 //
+																		 //
+	UFUNCTION()															 //
+	FText GetNoKeySpecifiedText(FString ActionString);					 //
+																		 //
+	//===================================================================//
 
 };

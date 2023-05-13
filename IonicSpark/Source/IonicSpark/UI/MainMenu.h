@@ -22,6 +22,9 @@ public:
 
 	UMainMenu(const FObjectInitializer& ObjectInitializer);
 
+	UFUNCTION()
+	void ToggleMenuSwitcher();
+
 protected:
 
 
@@ -68,16 +71,17 @@ private:
 
 
 	UFUNCTION()
-		void PlayButtonPressed();
+	void PlayButtonPressed();
 
 	UFUNCTION()
-		void SettingsButtonPressed();
+	void SettingsButtonPressed();
 
 	UFUNCTION()
-		void QuitButtonPressed();
-
+	void QuitButtonPressed();
 
 	UFUNCTION()
-		void BackButtonPressed();
+	void BackButtonPressed();
+
+	
 
 };

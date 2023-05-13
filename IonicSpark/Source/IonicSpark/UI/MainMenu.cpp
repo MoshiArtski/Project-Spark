@@ -1,6 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-#include "MainMenu.h"
+#include "IonicSpark/UI/MainMenu.h"
 #include "IonicSpark/IonicSparkGameInstance.h"
 #include "Components/Button.h"
 
@@ -33,6 +33,16 @@ bool UMainMenu::Initialize()
 	HostButton->OnClicked.AddDynamic(this, &UMainMenu::HostButtonPressed);
 
 	GameInstance = Cast<UIonicSparkGameInstance>(GetGameInstance());
+
+
+
+
+	MenuSwitcher->RemoveChildAt(1);
+
+	// Insert the widget at the new index
+	MenuSwitcher->InsertChildAt(2, LobbyMenu);
+
+
 
 	return true;
 }
@@ -68,8 +78,14 @@ void UMainMenu::QuitButtonPressed()
 }
 
 
-
 void UMainMenu::BackButtonPressed()
 {
 	MenuSwitcher->SetActiveWidget(MainMenu);
+}
+
+
+void UMainMenu::ToggleMenuSwitcher()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Switching widgets"));
+	MenuSwitcher->SetActiveWidgetIndex(MenuSwitcher->GetActiveWidgetIndex() / 2);
 }

@@ -63,6 +63,15 @@
     <ClInclude Include="..\..\Source\IonicSpark\IonicSparkGameModeBase.h">
       <Filter>Source\IonicSpark</Filter>
     </ClInclude>
+    <Filter Include="Source\IonicSpark\PlayerClasses">
+      <UniqueIdentifier>{A32DE09E-FA1A-3CDE-9B02-F531766D5555}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\IonicSpark\PlayerClasses\ShamanPlayerController.cpp">
+      <Filter>Source\IonicSpark\PlayerClasses</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\IonicSpark\PlayerClasses\ShamanPlayerController.h">
+      <Filter>Source\IonicSpark\PlayerClasses</Filter>
+    </ClInclude>
     <Filter Include="Source\IonicSpark\UI">
       <UniqueIdentifier>{BF2B8E42-F50C-36A1-AFA7-6686DAA22936}</UniqueIdentifier>
     </Filter>
